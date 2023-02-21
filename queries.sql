@@ -33,3 +33,7 @@ BEGIN;
 	ROLLBACK;
     SELECT * FROM   animals;
 END;
+
+BEGIN;
+	DELETE FROM animals WHERE date_of_birth > '01-01-2022';
+END;
