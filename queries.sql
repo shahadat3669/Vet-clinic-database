@@ -15,15 +15,21 @@ SELECT name FROM animals WHERE name NOT IN ('Gabumon');
 SELECT name FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
 
 BEGIN;
-  SET TRANSACTION READ WRITE;
-	UPDATE animals SET species = 'unspecified';
-  SELECT * FROM   animals;
+    SET TRANSACTION READ WRITE;
+    UPDATE animals SET species = 'unspecified';
+    SELECT * FROM   animals;
 	ROLLBACK;
 END;
 
 BEGIN;
 	UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
 	UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
-  SELECT * FROM   animals;
+    SELECT * FROM   animals;
 	COMMIT;
+END;
+
+BEGIN;
+	DELETE FROM animals;
+	ROLLBACK;
+    SELECT * FROM   animals;
 END;
