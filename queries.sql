@@ -44,3 +44,5 @@ BEGIN;
     SELECT * FROM   animals;
 	COMMIT;
 END;
+
+SELECT COUNT(*) FROM animals;
