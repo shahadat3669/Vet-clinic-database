@@ -30,3 +30,7 @@ INSERT INTO owners
 INSERT INTO species 
   VALUES (DEFAULT, 'Pokemon'),
   (DEFAULT, 'Digimon');
+
+UPDATE animals 
+  SET species_id = 2 WHERE 
+    name LIKE '%mon';
