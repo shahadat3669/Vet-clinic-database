@@ -20,9 +20,13 @@ INSERT INTO animals (
   (11, 'Ditto','05-14-2022', 4, TRUE, 22.0 );
 
 INSERT INTO owners 
-    VALUES (DEFAULT, 'Sam Smith', 34),
-    (DEFAULT, 'Jennifer Orwell', 19),
-    (DEFAULT, 'Bob', 45),
-    (DEFAULT, 'Melody Pond', 77),
-    (DEFAULT, 'Dean Winchester', 14),
-    (DEFAULT, 'Jodie Whittaker', 38);
+  VALUES (DEFAULT, 'Sam Smith', 34),
+  (DEFAULT, 'Jennifer Orwell', 19),
+  (DEFAULT, 'Bob', 45),
+  (DEFAULT, 'Melody Pond', 77),
+  (DEFAULT, 'Dean Winchester', 14),
+  (DEFAULT, 'Jodie Whittaker', 38);
+
+INSERT INTO species 
+  VALUES (DEFAULT, 'Pokemon'),
+  (DEFAULT, 'Digimon');
