@@ -21,3 +21,5 @@ CREATE TABLE IF NOT EXISTS species(
 	id SERIAL PRIMARY KEY,
 	name TEXT
 );
+
+ALTER TABLE animals DROP COLUMN species;
