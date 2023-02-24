@@ -62,3 +62,6 @@ SELECT * FROM animals LEFT JOIN owners ON animals.owner_id = owners.id WHERE ful
 SELECT * FROM animals LEFT JOIN species ON animals.species_id = species.id WHERE species.name = 'Pokemon';
 
 SELECT * FROM owners LEFT JOIN animals ON owners.id = animals.owner_id;
+
+SELECT species.name, COUNT(*) FROM species INNER JOIN animals ON (animals.species_id = species.id) GROUP BY species.name;
+
