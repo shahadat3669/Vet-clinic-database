@@ -18,3 +18,11 @@ INSERT INTO animals (
   (9, 'Boarmon','06-07-2005', 7, TRUE, 20.4 ),
   (10, 'Blossom','10-13-1998', 3, TRUE, 17.0 ),
   (11, 'Ditto','05-14-2022', 4, TRUE, 22.0 );
+
+INSERT INTO owners 
+    VALUES (DEFAULT, 'Sam Smith', 34),
+    (DEFAULT, 'Jennifer Orwell', 19),
+    (DEFAULT, 'Bob', 45),
+    (DEFAULT, 'Melody Pond', 77),
+    (DEFAULT, 'Dean Winchester', 14),
+    (DEFAULT, 'Jodie Whittaker', 38);
