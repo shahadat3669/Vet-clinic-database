@@ -9,5 +9,10 @@ CREATE TABLE IF NOT EXISTS animals (
   weight_kg DECIMAL
 );
 
-
 ALTER TABLE animals ADD species TEXT;
+
+CREATE TABLE IF NOT EXISTS owners(
+	id SERIAL PRIMARY KEY,
+	full_name TEXT,
+	age INT
+);
