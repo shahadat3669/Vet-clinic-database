@@ -51,7 +51,7 @@ INSERT INTO vets VALUES
   (DEFAULT, 'Stephanie Mendez', 64, 'May-04-1981'),
   (DEFAULT, 'Jack Harkness', 38, 'Jun-08-2008');
 
-INSERT INTO specializations VALUES (
+INSERT INTO specializations ( vets_id, species_id ) VALUES (
   (SELECT id FROM vets WHERE vets.name = 'William Tatcher'), 
   (SELECT id FROM species WHERE species.name = 'Pokemon')
 ), (
