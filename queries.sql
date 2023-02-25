@@ -80,3 +80,7 @@ SELECT animals.name, visits.date_of_visit FROM visits INNER JOIN
 SELECT COUNT(DISTINCT (visits.animals_id)) FROM visits INNER JOIN 
   vets ON (visits.vets_id = vets.id) 
     WHERE vets.name = 'Stephanie Mendez';
+
+SELECT vets.name, vets.age, species.name FROM vets LEFT JOIN 
+  specializations ON (vets.id = specializations.vets_id) LEFT JOIN 
+  species ON (species.id = specializations.species_id);
