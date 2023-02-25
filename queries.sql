@@ -105,3 +105,8 @@ SELECT animals.name AS animal_name, date_of_birth, escape_attempts, neutered, we
   animals ON ( visits.animals_id = animals.id) INNER JOIN 
     vets ON (visits.vets_id = vets.id) 
       ORDER BY date_of_visit DESC LIMIT 1;
+
+SELECT COUNT(*) AS total_visits FROM visits INNER JOIN 
+  animals ON (visits.animals_id = animals.id)INNER JOIN 
+    specializations ON (visits.vets_id = specializations.vets_id) 
+      WHERE animals.species_id <> specializations.species_id;
