@@ -29,3 +29,22 @@ ALTER TABLE animals ADD FOREIGN KEY(species_id) REFERENCES species(id);
 
 ALTER TABLE animals ADD owner_id integer;
 ALTER TABLE animals ADD FOREIGN KEY(owner_id) REFERENCES owners(id);
+
+CREATE TABLE IF NOT EXISTS vets (
+  id SERIAL PRIMARY KEY,
+  name varchar(100),
+  age INT,
+  date_of_graduation DATE
+);
+
+CREATE TABLE IF NOT EXISTS specializations (
+  vets_id INT NOT NULL REFERENCES vets(id) ON DELETE CASCADE,
+  species_id INT NOT NULL REFERENCES species(id) ON DELETE CASCADE
+  
+);
+
+CREATE TABLE IF NOT EXISTS visits (
+  animals_id INT NOT NULL REFERENCES animals(id) ON DELETE CASCADE,
+  vets_id INT NOT NULL REFERENCES vets(id) ON DELETE CASCADE,
+  date_of_visit DATE NOT NULL
+);
