@@ -41,3 +41,9 @@ CREATE TABLE IF NOT EXISTS specializations (
   species_id INT NOT NULL REFERENCES species(id) ON DELETE CASCADE,
   vets_id INT NOT NULL REFERENCES vets(id) ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS visits (
+  animals_id INT NOT NULL REFERENCES animals(id) ON DELETE CASCADE,
+  vets_id INT NOT NULL REFERENCES vets(id) ON DELETE CASCADE,
+  date_of_visit DATE NOT NULL
+);
