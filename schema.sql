@@ -36,3 +36,8 @@ CREATE TABLE IF NOT EXISTS vets (
   age INT,
   date_of_graduation DATE
 );
+
+CREATE TABLE IF NOT EXISTS specializations (
+  species_id INT NOT NULL REFERENCES species(id) ON DELETE CASCADE,
+  vets_id INT NOT NULL REFERENCES vets(id) ON DELETE CASCADE
+);
