@@ -94,3 +94,9 @@ SELECT DISTINCT (animals.id), animals.name FROM visits INNER JOIN
 SELECT animals.id, animals.name, COUNT(*) as total FROM visits INNER JOIN 
   animals ON (visits.animals_id = animals.id)
     GROUP BY animals.id ORDER BY count(*) DESC LIMIT 1;
+
+SELECT animals.name, visits.date_of_visit FROM vets INNER JOIN 
+  visits ON (vets.id = visits.vets_id) INNER JOIN 
+  animals ON (visits.animals_id = animals.id) 
+    WHERE vets.name = 'Maisy Smith' 
+      ORDER BY visits.date_of_visit LIMIT 1;
