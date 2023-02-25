@@ -110,3 +110,11 @@ SELECT COUNT(*) AS total_visits FROM visits INNER JOIN
   animals ON (visits.animals_id = animals.id)INNER JOIN 
     specializations ON (visits.vets_id = specializations.vets_id) 
       WHERE animals.species_id <> specializations.species_id;
+
+SELECT species.name AS specie_name, COUNT(*) AS total_visits FROM visits INNER JOIN 
+  animals ON (visits.animals_id = animals.id) INNER JOIN 
+    vets ON (visits.vets_id = vets.id) INNER JOIN 
+      species ON (animals.species_id = species.id)
+        WHERE vets.name = 'Maisy Smith' 
+          GROUP BY species.name 
+            ORDER BY COUNT(*) DESC LIMIT 1;
